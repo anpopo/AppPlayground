@@ -4,15 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_green"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearComponent1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/linearTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/main_font"
+            android:text="@string/application_title"
+            android:textColor="@color/light_purple"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintComponent1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearComponent1"
+        app:layout_constraintBottom_toTopOf="@id/entryButton">
+
+
+        <TextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/main_font"
+            android:text="@string/password_taker"
+            android:textColor="@color/light_purple"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintComponent1" />
+
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:autofillHints="비밀번호"
+            android:inputType="textPassword"
+            android:textColor="@color/light_purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordTextView"
+            tools:ignore="LabelFor" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/entryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:backgroundTint="@color/light_purple"
+        android:fontFamily="@font/main_font"
+        android:text="@string/entry_button"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
